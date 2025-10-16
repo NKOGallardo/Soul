@@ -1,0 +1,119 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Layout */
+.ig-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1000px;
+  background: #111;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Left Section */
+.ig-info {
+  flex: 1;
+  padding: 3rem;
+}
+
+.ig-info h1 {
+  font-size: 2.8rem;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.ig-info p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Button */
+.ig-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ig-btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.back-btn {
+  background: transparent;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Right Section */
+.ig-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.ig-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive for phones */
+@media (max-width: 800px) {
+  .ig-page {
+    flex-direction: column;
+  }
+
+  .ig-info, .ig-image {
+    width: 100%;
+  }
+
+  .ig-info {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .ig-image img {
+    display: none;
+  }
+}
