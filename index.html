@@ -7,20 +7,163 @@
   <meta name="description" content="city.soul — Symphony Of Unseen Life. Photographer portfolio with cinematic gallery and subtle animations." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="images/profile.jpg" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      background-color: #000;
+    }
+
+    /* Navigation Bar */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: lowercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #a86cf4;
+    }
+
+    /* Mobile Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      nav ul.active {
+        max-height: 300px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 200px 20px 100px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin: 20px auto;
+      max-width: 600px;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      background: #111;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #a86cf4;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">city.soul</div>
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <header id="home">
     <h1>city.soul</h1>
     <p>Symphony Of Unseen Life with the Sound Of Unbound Light causing Strength Of Understanding Life</p>
     <button class="btn" onclick="Home()">My Work</button>
   </header>
-  <footer>
-  <p>Developed by <a href="https://nkocoding.codes/" target="_blank">NKO Coding</a></p>
-</footer>
 
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    function Home() {
+      window.location.href = "#gallery";
+    }
+  </script>
 </body>
-<script src="scripts.js"></script>
 </html>
-
-
-
