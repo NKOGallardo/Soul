@@ -8,72 +8,244 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="images/profile.jpg" />
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Navigation Bar */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    body {
-      font-family: "Poppins", sans-serif;
-      color: #fff;
-      background-color: #000;
-    }
+nav:hover {
+  background: rgba(0, 0, 0, 0.45); /* slightly darker on hover */
+}
+
+nav .logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  transition: color 0.3s;
+  padding: 8px 15px;
+  transition: 2s;
+}
+
+nav ul li a:hover {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav ul.active {
+    max-height: 300px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .btn {
+    margin: 1rem auto;
+  }
+}
+</style>
+  <style>
+    /* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
+/* Header background setup */
+header {
+  background-image: url("images/Photographer.webp"); /* 🔹 replace with your image path */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem; /* prevents edge text cutoff on mobile */
+}
+
+/* Cinematic overlay */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay */
+  z-index: 0;
+}
+
+header h1,
+header p,
+header .btn {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+header p {
+  max-width: 700px;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.5;
+}
 
     /* Navigation Bar */
-    nav {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: transparent;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-
-    nav .logo {
-      font-size: 50px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #a86cf4;
-    }
-
     /* Mobile Toggle */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
 
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-      border-radius: 3px;
-      transition: 0.3s;
-    }
+
+    
+
+/* 🔘 Button Style */
+.btn {
+  margin-left: 200px;
+  margin-top: ;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+
+/* ========================================
+   📱 Responsive Design
+======================================== */
+
+/* Tablets (under 1024px) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  header p {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+}
+
+/* Mobile Landscape (under 768px) */
+@media (max-width: 768px) {
+  header {
+    height: 90vh;
+    padding: 0 1.5rem;
+  }
+  header h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+  }
+  header p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Portrait (under 480px) */
+@media (max-width: 480px) {
+  header {
+    height: auto;
+    padding: 5rem 1rem;
+  }
+  header h1 {
+    margin-top: 100px;
+    font-size: 30px;
+  }
+  header p {
+    font-size: 0.95rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
 
     @media (max-width: 768px) {
       nav ul {
@@ -125,10 +297,7 @@
   <nav>
     <div class="logo">CITY.SOUL</div>
     <ul id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <button class="btn" onclick="Home()">My Work</button>
     </ul>
     <div class="menu-toggle" id="menuToggle">
       <span></span>
@@ -138,9 +307,6 @@
   </nav>
 
   <header id="home">
-    <h1>CITY.SOUL</h1>
-    <p>Symphony Of Unseen Life with the Sound Of Unbound Light causing Strength Of Understanding Life</p>
-    <button class="btn" onclick="Home()">My Work</button>
   </header>
 
   <script src="scripts.js">
@@ -157,4 +323,3 @@
   </script>
 </body>
 </html>
-
