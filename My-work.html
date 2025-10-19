@@ -3,16 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Work</title>
+  <title>My Work | CITY.SOUL</title>
   <link rel="stylesheet" href="my-work.css" />
-  <link rel="icon" type="image/x-icon" href="images/profile.jpg" />
+  <link rel="icon" type="image/png" href="images/profile.jpg" />
 </head>
 <body>
-  <header>
+
+  <!-- Transparent Navigation -->
+  <nav class="navbar">
+    <div class="logo">CITY.<span>SOUL</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="my-work.html" class="active">My Work</a></li>
+      <li><a href="Read more.html">read-more</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="hero">
     <h1>My Work</h1>
     <p>Capturing emotion, light, and stories through the lens.</p>
   </header>
 
+  <!-- Gallery Section -->
   <section class="gallery">
     <img src="images/there.jpg" alt="Urban Life" />
     <img src="images/i see you.jpg" alt="Urban Life" />
@@ -23,15 +39,25 @@
     <img src="images/black and white.jpg" alt="Urban Life" />
   </section>
 
+  <!-- End Section -->
   <section class="end">
-    <button onclick="social()" class="back-btn">← my socials</button>
+    <button onclick="social()" class="back-btn">← Contact me</button>
   </section>
+
+  <!-- Footer -->
   <footer>
-  <p>Developed by <a href="https://nkocoding.codes/" target="_blank">NKO Coding</a></p>
-</footer>
+    <p>Developed by <a href="https://nkocoding.codes/" target="_blank">NKO Coding</a></p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
 </body>
-<script src="scripts.js"></script>  
 </html>
-
-
