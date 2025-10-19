@@ -11,14 +11,15 @@
 
   <!-- Transparent Navigation -->
   <header class="navbar">
-    <div class="logo">CITY.SOUL </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Read more.html" class="active">Read More</a></li>
-        <li><a href="socials.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="logo">CITY.<span>SOUL</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Read more.html" class="active">Read More</a></li>
+      <li><a href="socials.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -34,14 +35,14 @@
     <div class="content">
       <h2>About Us</h2>
       <p>
-        Welcome to <strong>LensArt</strong> where every image is a crafted story told through light and emotion.  
-        Our journey began with a deep appreciation for the power of moments those fleeting seconds that reveal truth, love, and beauty.  
-        Through our lens, we don’t just capture what you see, but what you *feel*.  
+        Welcome to <strong>LensArt</strong>, where every image is a crafted story told through light and emotion.  
+        Our journey began with a deep appreciation for the power of moments — those fleeting seconds that reveal truth, love, and beauty.  
+        Through our lens, we don’t just capture what you see, but what you <em>feel</em>.
       </p>
       <p>
         Every photograph is a conversation between the subject and the soul.  
         Whether it’s an intimate portrait or a grand celebration, we approach every frame with authenticity, passion, and artistic precision.  
-        Our mission is simple to turn memories into timeless art.
+        Our mission is simple — to turn memories into timeless art.
       </p>
     </div>
   </section>
@@ -51,7 +52,7 @@
     <div class="content">
       <h2>What We Specialize In</h2>
       <p style="margin-bottom: 20px; text-align: center;">
-        Our craft extends across multiple photography genres each handled with its own artistry and storytelling depth.
+        Our craft extends across multiple photography genres — each handled with its own artistry and storytelling depth.
       </p>
 
       <div class="types-grid">
@@ -76,7 +77,7 @@
         <div class="type-card">
           <img src="images/fashin.jpg" alt="Fashion Photography">
           <h3>Fashion</h3>
-          <p>Where creativity meets elegance bold colors, clean lines, and cinematic mood.</p>
+          <p>Where creativity meets elegance — bold colors, clean lines, and cinematic mood.</p>
         </div>
       </div>
     </div>
@@ -88,12 +89,12 @@
       <h2>Our Style of Photography</h2>
       <p>
         Our style blends <strong>natural light</strong> with a <strong>moody, cinematic feel</strong> that brings out the true essence of each subject.  
-        We believe color has emotion warm tones for love, cool hues for depth, and balanced contrast for truth.
+        We believe color has emotion — warm tones for love, cool hues for depth, and balanced contrast for truth.
       </p>
       <p>
         Every photograph is carefully composed to highlight authenticity over perfection.  
-        It’s about capturing "real smiles, real movement," and "real connection".  
-        Each frame tells a story that lasts beyond the moment raw, bold, and beautifully human.
+        It’s about capturing real smiles, movement, and connection.  
+        Each frame tells a story that lasts beyond the moment — raw, bold, and beautifully human.
       </p>
 
       <button class="btn" onclick="social()">Contact</button>
@@ -105,6 +106,20 @@
     <p>Developed by <a href="https://nkocoding.codes/" target="_blank">nkocoding.codes</a></p>
   </footer>
 
-  <script src="read more.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+
 </body>
 </html>
