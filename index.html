@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CITY.SOUL</title>
   <meta name="description" content="CITY.SOUL — Symphony Of Unseen Life. Photographer portfolio with cinematic gallery and subtle animations." />
-  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="images/profile.jpg" />
   <style>
-/* Navigation Bar */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* NAVIGATION */
 nav {
   width: 100%;
   display: flex;
@@ -18,15 +31,13 @@ nav {
   background: transparent;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1000;
   transition: background 0.3s ease;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 nav:hover {
-  background: rgba(0, 0, 0, 0.45); /* slightly darker on hover */
+  background: rgba(0, 0, 0, 0.45);
 }
 
 nav .logo {
@@ -38,6 +49,7 @@ nav .logo {
 }
 
 nav ul {
+  margin-left: 2000px;
   display: flex;
   list-style: none;
   gap: 25px;
@@ -47,10 +59,9 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  font-weight: 400;
-  transition: color 0.3s;
+  background-color: #111111;
   padding: 8px 15px;
-  transition: 2s;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
@@ -58,122 +69,8 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Mobile menu toggle */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
-  transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(0, 0, 0, 0.85);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  nav ul.active {
-    max-height: 300px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .btn {
-    margin: 1rem auto;
-  }
-}
-</style>
-  <style>
-    /* Reset defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  background-color: #000;
-}
-
-/* Header background setup */
-header {
-  background-image: url("images/Photographer.webp"); /* 🔹 replace with your image path */
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* full screen */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  padding: 0 1rem; /* prevents edge text cutoff on mobile */
-}
-
-/* Cinematic overlay */
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* dark overlay */
-  z-index: 0;
-}
-
-header h1,
-header p,
-header .btn {
-  position: relative;
-  z-index: 1;
-}
-
-header h1 {
-  font-size: 4rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-header p {
-  max-width: 700px;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #ddd;
-  line-height: 1.5;
-}
-
-    /* Navigation Bar */
-    /* Mobile Toggle */
-
-
-    
-
-/* 🔘 Button Style */
+/* BUTTON */
 .btn {
-  margin-left: 200px;
-  margin-top: ;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
   font-weight: 500;
@@ -192,124 +89,145 @@ header p {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
-
-/* ========================================
-   📱 Responsive Design
-======================================== */
-
-/* Tablets (under 1024px) */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 3rem;
-  }
-  header p {
-    font-size: 1.1rem;
-    max-width: 600px;
-  }
+/* MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
-/* Mobile Landscape (under 768px) */
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* HEADER */
+header {
+  background-image: url("images/WhatsApp Image 2025-10-17 at 21.26.09.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+header a {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #aaa;
+  background: #000;
+  display: none;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  header {
-    height: 90vh;
-    padding: 0 1.5rem;
+  nav {
+    padding: 15px 20px;
   }
+  nav ul {
+    position: absolute;
+    top: 55px;
+    right: 0px;
+    background: black;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+  }
+
+  nav ul.active {
+    max-height: 300px;
+  }
+  
+  nav ul button {
+    margin-top: 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .btn {
+    margin: 1rem auto;
+  }
+
   header h1 {
     font-size: 2.4rem;
-    letter-spacing: 1px;
   }
+
   header p {
     font-size: 1rem;
-    line-height: 1.4;
   }
-  .btn {
-    padding: 0.7rem 1.8rem;
-    font-size: 1rem;
+
+  footer {
+    display: none;
   }
 }
 
-/* Mobile Portrait (under 480px) */
 @media (max-width: 480px) {
-  header {
-    height: auto;
-    padding: 5rem 1rem;
-  }
   header h1 {
-    margin-top: 100px;
-    font-size: 30px;
+    font-size: 2rem;
   }
   header p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .btn {
     font-size: 0.9rem;
     padding: 0.6rem 1.5rem;
   }
 }
-
-    @media (max-width: 768px) {
-      nav ul {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9);
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-
-      nav ul.active {
-        max-height: 300px;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 200px 20px 100px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 3px;
-      color: #fff;
-    }
-
-    header p {
-      margin: 20px auto;
-      max-width: 600px;
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+
   <nav>
+    
     <div class="logo">CITY.SOUL</div>
     <ul id="navLinks">
-      <button class="btn" onclick="Home()">My Work</button>
+      <li><button class="btn" onclick="Home()">My Work</button></li>
     </ul>
     <div class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </nav>
 
   <header id="home">
+    <a class="btn" href="My-work.html">My Work</a>
   </header>
 
-  <script src="scripts.js">
+  <footer>
+    <p>Developed by <a href="https://nkocoding.codes/" style="color:#fff; text-decoration:none;">nkocoding.codes</a></p>
+  </footer>
+
+  <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -317,8 +235,12 @@ header p {
       navLinks.classList.toggle("active");
     });
 
+    button.addEventListener('click', () => {
+      window.location.href = 'My-work.html';
+    });
+
     function Home() {
-      window.location.href = "#gallery";
+        window.location.href = "My-work.html";
     }
   </script>
 </body>
