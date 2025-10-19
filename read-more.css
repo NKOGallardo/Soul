@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Transparent Navbar */
+/* Navigation Bar */
 .navbar {
   position: fixed;
   top: 0;
@@ -37,6 +37,10 @@ body {
   letter-spacing: 1px;
 }
 
+.logo span {
+  color: #d0d0d0;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -46,8 +50,12 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: 400;
   position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d9d9d9;
 }
 
 .nav-links a::after {
@@ -58,15 +66,66 @@ body {
   width: 0%;
   height: 2px;
   background: #000000;
-  transition: 0.3s;
+  transition: width 0.3s;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-.nav-links .active {
-  color: #000000;
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Active menu animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 220px;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    transition: height 0.4s ease;
+  }
+
+  .nav-links.active {
+    height: 220px;
+    padding: 20px 0;
+  }
 }
 
 /* Hero Section */
@@ -115,7 +174,7 @@ body {
   padding: 12px 25px;
   border: none;
   border-radius: 6px;
-  background: linear-gradient(45deg, #b76df5, #6a0dad);
+  background: linear-gradient(45deg, white, black);
   color: #fff;
   cursor: pointer;
   font-size: 1rem;
@@ -124,7 +183,7 @@ body {
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #b76df5;
+  box-shadow: 0 0 20px #fff;
 }
 
 /* Footer */
@@ -136,7 +195,7 @@ footer {
 }
 
 footer a {
-  color: #b76df5;
+  color: #aaa;
   text-decoration: none;
 }
 
@@ -167,21 +226,6 @@ footer a {
   to {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    background: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    display: none;
-    text-align: center;
-    padding: 20px;
   }
 }
 
