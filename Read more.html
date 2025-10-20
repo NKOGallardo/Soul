@@ -14,8 +14,9 @@
     <div class="logo">CITY.<span>SOUL</span></div>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="Read more.html" class="active">Read More</a></li>
-      <li><a href="socials.html">Contact</a></li>
+      <li><a href="my-work.html" class="active">My Work</a></li>
+      <li><a href="Read more.html">Read more</a></li>
+      <li><a href="socials.html">Socials</a></li>
     </ul>
     <div class="menu-toggle" id="menuToggle">
       <span></span><span></span><span></span>
@@ -106,19 +107,7 @@
     <p>Developed by <a href="https://nkocoding.codes/" target="_blank">nkocoding.codes</a></p>
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active");
-      navLinks.classList.toggle("active");
-    });
-
-    window.addEventListener("scroll", () => {
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
+  <script src="read more.js">
   </script>
 
 </body>
