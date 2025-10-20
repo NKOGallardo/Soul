@@ -45,6 +45,7 @@ body {
   list-style: none;
   display: flex;
   gap: 30px;
+  border-radius: 20px;
 }
 
 .nav-links a {
@@ -241,5 +242,6 @@ footer a:hover {
   .nav-links.active {
     height: 220px;
     padding: 20px 0;
+  border-radius: 20px;
   }
 }
