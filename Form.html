@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Appointment</title>
+    <link rel="stylesheet" href="Form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your Appointment</h1>
+        <p class="subtitle">Fill out the form below and we'll get back to you shortly</p>
+        
+        <form id="bookingForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date <span class="required">*</span></label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="startTime">Start Time <span class="required">*</span></label>
+                    <input type="time" id="startTime" name="startTime" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="endTime">End Time <span class="required">*</span></label>
+                    <input type="time" id="endTime" name="endTime" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Photography Service <span class="required">*</span></label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="portrait">Portrait Session</option>
+                    <option value="wedding">Wedding Photography</option>
+                    <option value="event">Event Coverage</option>
+                    <option value="commercial">Commercial/Product</option>
+                    <option value="family">Family Photos</option>
+                    <option value="engagement">Engagement Shoot</option>
+                    <option value="corporate">Corporate Headshots</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Shoot Location <span class="required">*</span></label>
+                <input type="text" id="location" name="location" placeholder="e.g., Studio, Outdoor venue, Home address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Number of People</label>
+                <input type="number" id="guests" name="guests" min="1" placeholder="How many people will be photographed?">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Notes</label>
+                <textarea id="message" name="message" placeholder="Tell us more about your needs..."></textarea>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-cancel" id="cancelBtn">Cancel</button>
+                <button type="submit" class="btn">Confirm Booking</button>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✓ Thank you! Your booking request has been submitted successfully. We'll contact you shortly to confirm your appointment.
+            </div>
+        </form>
+    </div>
+
+    <script src="Form.js">
+    </script>
+</body>
+</html>
