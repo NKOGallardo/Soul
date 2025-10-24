@@ -10,27 +10,44 @@
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <nav>
-    <div class="logo">CITY.SOUL</div>
-    <ul id="navLinks">
-      <li><button class="btn" onclick="Home()">My Work</button></li>
-    </ul>
-    <div class="menu-toggle" id="menuToggle">
-      <span></span><span></span><span></span>
+    <div class="nav-container">
+      <div class="logo">CITY.SOUL</div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="Read more.html">About</a></li>
+        <li><a href="socials.html">social</a></li>
+      </ul>
     </div>
   </nav>
 
+  <!-- Hero Header -->
   <header id="home">
-    <a class="btn" href="Read more.html">Read more</a>
-    <a class="btn" href="My-work.html">My Work</a>
-    <a class="btn" href="Form.html">Book Now</a>
+    <div class="hero-content">
+      <div class="typing-container">
+        <span class="typing-text"></span>
+      </div>
+      <p class="subtitle">Symphony Of Unseen Life with the Sound Of Unbound Light causing Strength Of Understanding Life</p>
+    </div>
+    <div class="btn-container">
+      <a class="btn" href="Read more.html">Read more</a>
+      <a class="btn" href="Form.html">Book Now</a>
+    </div>
   </header>
 
+  <!-- Footer -->
   <footer>
-    <p>Developed by <a href="https://nkocoding.codes/" style="color:#fff; text-decoration:none;">nkocoding.codes</a></p>
+    <p>Developed by <a href="https://nkocoding.codes/">nkocoding.codes</a></p>
   </footer>
 
   <script>
+    // Menu Toggle
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -39,13 +56,53 @@
       navLinks.classList.toggle("active");
     });
 
-    button.addEventListener('click', () => {
-      window.location.href = 'My-work.html';
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
     });
 
-    function Home() {
-        window.location.href = "My-work.html";
+    // Typing Animation
+    const texts = ["CITY.SOUL", "URBAN STORIES", "HIDDEN MOMENTS"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 150;
+    const deletingSpeed = 75;
+    const pauseTime = 2000;
+
+    function type() {
+      const typingElement = document.querySelector('.typing-text');
+      const currentText = texts[textIndex];
+
+      if (!isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentText.length) {
+          isDeleting = true;
+          setTimeout(type, pauseTime);
+          return;
+        }
+      } else {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+        }
+      }
+
+      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
     }
+
+    // Start typing animation
+    window.addEventListener('load', () => {
+      setTimeout(type, 500);
+    });
   </script>
 </body>
 </html>
