@@ -2,30 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>city.soul — Instagram</title>
   <link rel="stylesheet" href="social.css" />
   <link rel="icon" type="image/png" href="images/profile.jpg" />
 </head>
 <body>
   
-  <section class="ig-page">
+  <!-- Transparent Navigation -->
+  <header class="navbar">
+    <div class="logo">CITY.<span>SOUL</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Read more.html">Read more</a></li>
+      <li><a href="socials.html">Socials</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <section class="ig-page" id="ig-section">
     <div class="ig-info">
       <h1>@city.soul</h1>
       <img style="border-radius: 50%; width: 40px; height: 40px; margin-top: 10px;" src="images/profile.jpg" alt="Instagram Logo" class="ig-logo" />
       <p>Capturing the unseen rhythm of urban life — through light, shadow, and emotion.</p>
       <a href="https://www.instagram.com/city.soul_/" target="_blank" class="ig-btn">View Instagram</a>
       <a href="https://wa.me/0678511450" target="_blank" class="ig-btn">WhatsApp</a>
-      <a href="Form.html" class="ig-btn">Book Now</a>
+      <a href="Form.html" class="ig-btn" id="book-section">Book Now</a>
     </div>
 
     <div class="ig-image">
       <img src="images/click here.jpg" alt="Instagram preview" />
     </div>
   </section>
-  <section>
-</section>
-</body>
-<script src="scripts.js"></script>
-</html>
 
+  <!-- Google Maps Section -->
+  <section id="map-section" class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114584.91033302117!2d27.957621885968848!3d-26.171343971956613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sJohannesburg!5e0!3m2!1sen!2sza!4v1761418769553!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+</body>
+<script>
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</html>
