@@ -150,7 +150,8 @@ body {
 .hero-content p {
   margin-top: 15px;
   font-size: 1.2rem;
-  color: #ddd;
+  color: #fff;
+  background-color: #111;
 }
 
 /* Read More Section */
