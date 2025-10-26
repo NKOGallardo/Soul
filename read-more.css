@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: font-name-1, font-name-2, generic-family;
   background-color: #000;
   color: #fff;
   overflow-x: hidden;
