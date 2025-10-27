@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City.Soul | Packages</title>
+  <link rel="icon" type="image/png" href="images/profile.jpg" />
+  <link rel="stylesheet" href="price.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">CITY.<span>SOUL</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Read more.html">Read more</a></li>
+      <li><a href="socials.html">Socials</a></li>
+      <li><a href="price.html">Price</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Header Section -->
+  <section class="header">
+    <h1>City.Soul Packages</h1>
+    <p>Choose the perfect photography package for your vibe.</p>
+  </section>
+
+  <!-- Packages -->
+  <main>
+    <section class="package bronze">
+      <h2>Bronze Package – R850</h2>
+      <p>1-hour shoot, 10 edited photos, 1 location</p>
+      <div class="gallery">
+        <img src="images/bronze1.jpg" alt="Bronze Sample 1">
+        <img src="images/bronze2.jpg" alt="Bronze Sample 2">
+        <img src="images/bronze3.jpg" alt="Bronze Sample 3">
+      </div>
+    </section>
+
+    <section class="package silver">
+      <h2>Portraits – R1500</h2>
+      <p>2-hour shoot, 25 edited photos, 2 locations</p>
+      <div class="gallery">
+        <img src="images/Pot1.jpeg" alt="Portrait Sample 1">
+        <img src="images/pot2.jpeg" alt="Portrait Sample 2">
+        <img src="images/pot3.jpeg" alt="Portrait Sample 3">
+      </div>
+    </section>
+
+    <section class="package gold">
+      <h2>Weddings – R2500</h2>
+      <p>4-hour shoot, 50 edited photos, multiple locations</p>
+      <div class="gallery">
+        <img src="images/wedding.jpg" alt="Wedding Sample 1">
+        <img src="images/wed.jpeg" alt="Wedding Sample 2">
+        <img src="images/wed1.jpeg" alt="Wedding Sample 3">
+        <img src="images/wed2.jpeg" alt="Wedding Sample 4">
+        <img src="images/Wed3.jpeg" alt="Wedding Sample 5">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Developed by <a href="https://nkocoding.codes/" target="_blank">nkocoding.codes</a></p>
+  </footer>
+
+  <script src="price.js">
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
