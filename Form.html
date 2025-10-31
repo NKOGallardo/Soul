@@ -7,8 +7,54 @@
     <link rel="stylesheet" href="Form.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Policy Popup -->
+    <div class="popup-overlay" id="policyPopup">
+        <div class="popup-content">
+            <h2>Booking Policy & Terms</h2>
+            <div class="policy-text">
+                <p>Please read and accept our booking policy before proceeding with your appointment request.</p>
+                
+                <h3>Booking Terms</h3>
+                <ul>
+                    <li>All appointments are subject to availability and confirmation</li>
+                    <li>A deposit may be required to secure your booking</li>
+                    <li>Please arrive 10 minutes before your scheduled time</li>
+                </ul>
+
+                <h3>Cancellation Policy</h3>
+                <ul>
+                    <li>Cancellations must be made at least 48 hours in advance</li>
+                    <li>Late cancellations may forfeit the deposit</li>
+                    <li>We reserve the right to reschedule due to unforeseen circumstances</li>
+                </ul>
+
+                <h3>Photography Rights</h3>
+                <ul>
+                    <li>All photographs remain the property of the photographer</li>
+                    <li>Usage rights will be specified in your contract</li>
+                    <li>We may use photos for portfolio and marketing purposes unless otherwise agreed</li>
+                </ul>
+
+                <h3>Payment Terms</h3>
+                <ul>
+                    <li>Pay 50% deposit to secure your booking</li>
+                    <li>Payment can be made via credit card, PayPal, or bank transfer</li>
+                    <li>Prices are subject to change based on specific requirements</li>
+                </ul>
+
+                <p><strong>By clicking "Accept & Continue", you agree to these terms and conditions.</strong></p>
+            </div>
+            <div class="popup-buttons">
+                <button class="popup-btn popup-btn-decline" id="declineBtn">Decline</button>
+                <button class="popup-btn popup-btn-accept" id="acceptBtn">Accept & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="container" id="bookingContainer">
         <h1>Book Your Appointment</h1>
+        <h4>Refresh the page to see the <strong>Policy</strong></h4>
         <p class="subtitle">Fill out the form below and we'll get back to you shortly</p>
         
         <form id="bookingForm" 
@@ -90,12 +136,59 @@
             </div>
 
             <div class="success-message" id="successMessage">
-                😓 opps you did a mistake, Please fill in all required fields.
+                😓 Oops, you made a mistake. Please fill in all required fields.
             </div>
         </form>
     </div>
 
     <script>
+        const policyPopup = document.getElementById('policyPopup');
+        const bookingContainer = document.getElementById('bookingContainer');
+        const acceptBtn = document.getElementById('acceptBtn');
+        const declineBtn = document.getElementById('declineBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const bookingForm = document.getElementById('bookingForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // Accept policy and show form
+        acceptBtn.addEventListener('click', function() {
+            policyPopup.classList.add('hidden');
+            bookingContainer.classList.add('visible');
+        });
+
+        // Decline policy
+        declineBtn.addEventListener('click', function() {
+            alert('You must accept the policy to book an appointment.');
+        });
+
+        // Cancel button
+        cancelBtn.addEventListener('click', function() {
+            if (confirm('Are you sure you want to cancel? All entered data will be lost.')) {
+                bookingForm.reset();
+                bookingContainer.classList.remove('visible');
+                policyPopup.classList.remove('hidden');
+            }
+        });
+
+        // Form validation
+        bookingForm.addEventListener('submit', function(e) {
+            const requiredFields = bookingForm.querySelectorAll('[required]');
+            let allFilled = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    allFilled = false;
+                }
+            });
+
+            if (!allFilled) {
+                e.preventDefault();
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }
+        });
     </script>
 </body>
 </html>
